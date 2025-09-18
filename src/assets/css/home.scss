@@ -1,0 +1,86 @@
+.main-home-section{
+    background-color: rgb(237, 237, 236);
+    min-height: 100vh;
+}
+.primary-btn{
+  padding: 9.5px 12px;
+  background-color: green;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+// .header{
+//     width: 100%;
+//     height: 80px;
+//     background-color: white;
+//     border-bottom: 1px solid rgba(171, 169, 169,.6);
+// }
+
+.table-wrapper{
+    box-shadow: 0 0 10px rgba(75, 75, 75,.1);
+    border: 1px solid rgba(174, 172, 172,.3);
+    border-radius: 4px;
+    background-color: white;
+    padding: 10px;
+
+    .table-header{
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(174, 172, 172,.3);
+    }
+}
+
+
+.custom-delete-modal{
+    .ant-modal-content{
+        max-width: 400px;
+        .modal-delete-frame{
+            .exclamation-icon{
+                font-size: 40px;
+                color: orange;
+            }
+        }
+        .ant-modal-footer{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 20px;
+            button{
+                &:first-child{
+                    background-color: red;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+.custom-member-modal{
+    width: 100% !important;
+    max-width: 800px;
+     
+    .ant-modal-content{
+        max-width: 800px;
+     
+        .ant-modal-footer{
+            text-align: center;
+            button{
+                    background-color: green;
+                    color: white;
+                
+            }
+        }
+    }
+}
+
+.form-input{
+    padding: 5px 14px;
+    border-radius: 3px;
+}
