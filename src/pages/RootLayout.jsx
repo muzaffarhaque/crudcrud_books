@@ -10,7 +10,7 @@ import { CiWallet } from 'react-icons/ci';
 export default function RootLayout() {
   return (
     <div className='root-layout-css-start'>
-        <Header/>
+        {/* <Header/> */}
         <div className="outlet-wrapper">
             <ul className="nave-bar">
                 <li className='active'><IoMdHome /></li>

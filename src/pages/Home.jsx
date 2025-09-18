@@ -192,6 +192,7 @@ export default function Home() {
               locale={{
                 emptyText: 'No Data Found',
               }}
+              scroll={{ x: 800 }}
 
             />
             
