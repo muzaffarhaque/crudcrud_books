@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { commonPostApi, commonPutApi } from "../server/Api";
 import { domain } from "../utils/constent";
+import { toast } from "react-toastify";
 
 export default function BookForm({ onOk = () => {}, editData = "" }) {
   const [formValues, setFormValues] = useState({
@@ -59,11 +60,14 @@ export default function BookForm({ onOk = () => {}, editData = "" }) {
           year: "",
           status: "Available",
         });
+        toast.success(editData ? "Book updated successfully!" : "Book added successfully!");
         onOk();
       } else {
+        toast.error("Failed to submit the form!");
         console.error("Failed to submit the form. Status:", response.status);
       }
     } catch (error) {
+       toast.error("Error submitting the form!");
       console.error("Error submitting the form:", error);
     } finally {
       setLoading(false); // stop loader

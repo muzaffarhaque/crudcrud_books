@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss'
 import { ErrorPage } from "./components";
 import RootLayout from "./pages/RootLayout";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
     // const router = createBrowserRouter([
     //     {

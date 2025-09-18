@@ -10,6 +10,7 @@ import {
 } from "@ant-design/icons";
 import NewMemberForm from "../components/NewMemberForm";
 import { domain } from "../utils/constent";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,6 +48,10 @@ export default function Home() {
       if (res.status >= 200 && res.status < 300) {
         setDeleteId('');
         getData();
+        toast.success("Book deleted successfully!");
+      }else{
+         toast.error("Error submitting the form!");
+        console.error("Failed to delete the book. Status:", res.status);
       }
     }
     setIsModalOpen(false);
