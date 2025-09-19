@@ -21,15 +21,24 @@ export default function Home() {
   const [perPage,setPerPage]= useState(3);
   const [data, setData] = useState([]);
   const [data2, setData2] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   async function getData() {
+    try{
+    setLoading(true);
     const data = await commonGetApi(
       `${domain}/books`
     );
+    await new Promise((resolve) => setTimeout(resolve, 500)); 
     // console.log(data);
     setData(data.data.reverse());
     setData2(data.data.reverse());
+  }catch(err){
+    console.error("Error fetching data:", err); 
+  } finally{ 
+    setLoading(false);
   }
+}
   useEffect(() => {
     getData();
   }, []);
@@ -180,6 +189,7 @@ export default function Home() {
             <Table
               dataSource={data}
               columns={columns}
+              loading={loading}
               pagination={{
                 pageSize:perPage,
                 showSizeChanger: true,
@@ -190,10 +200,10 @@ export default function Home() {
                 },
               }}
               locale={{
-                emptyText: 'No Data Found',
+                emptyText: loading ? "Loading..." : "No Data Found",
               }}
               scroll={{ x: 800 }}
-
+              // style={{ minHeight: "300px" }}
             />
             
           </div>
