@@ -1,1 +1,1 @@
-export const domain="https://crudcrud.com/api/d3d22901f3c54310a77da4cfff75fdde";
+export const domain="https://crudcrud.com/api/17b3475b4a7b4009b1c2614a928d5a70";
